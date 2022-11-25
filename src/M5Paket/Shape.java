@@ -18,6 +18,18 @@ public abstract class Shape implements Drawable {
         this.color = color;
     }
 
+    public void setxPos(int xPos){
+        this.xPos=xPos;
+    }
+    public void setyPos(int xPos){
+        this.xPos=xPos;
+    }
+
+    public int getxPos(){
+        return xPos;
+    }  public int getyPos(){
+        return yPos;
+    }
     public abstract void draw(Graphics2D g);
 
     public abstract int getArea();

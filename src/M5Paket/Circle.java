@@ -3,30 +3,27 @@ package M5Paket;
 import se.egy.graphics.Drawable;
 
 import java.awt.*;
+public class Circle extends Shape {
+    private int diameter;
 
-public class Circle implements Drawable  {
-
-
-    private int xPos, yPos, width, height;
-    private Color color;
-
-
-    public Circle(int w, int h, int x, int y, Color c) {
-        width = w;
-        height = h;
-        xPos = x;
-        yPos = y;
-        color = c;
-
+    /** Konstruktor */
+    public Circle(int diameter, int xPos, int yPos, Color color) {
+        super(xPos, yPos, color); // anropar Shapes konstruktor
+        this.diameter = diameter;
     }
-    @Override
+
     public void draw(Graphics2D g) {
         g.setColor(color);
-        g.fillOval(xPos, yPos, width, height);
-
-
+        g.fillOval(xPos, yPos, diameter, diameter);
     }
 
+    public int getArea() {
+        int area = (int) (Math.PI*(diameter/2)*(diameter/2));
+        return area;
+    }
+
+    public int getOmk() {
+        int omk = (int) (Math.PI*diameter);
+        return omk;
+    }
 }
-
-

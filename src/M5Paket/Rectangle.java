@@ -1,58 +1,15 @@
 package M5Paket;
 
-import se.egy.graphics.Drawable;
-
 import java.awt.*;
 
-public class Rectangle implements Drawable {
-    protected int width;
-    protected int height;
-    protected int xPos, yPos;
-    protected Color color;
+public class Rectangle extends Shape{
+    private int width;
+    private int height;
 
-    /**
-     * Konstruktor
-     */
-    public Rectangle(int w, int h, int x, int y, Color c) {
-        width = w;
-        height = h;
-        xPos = x;
-        yPos = y;
-        color = c;
-    }
-
-    public int getArea() {
-        int area = width * height;
-        return area;
-    }
-
-    public int getOmk() {
-        int omk = 2 * width + 2 * height;
-        return omk;
-
-    }
-
-    public Color getColor() {
-
-        return this.color;
-    }
-
-    public int getxPos() {
-        return xPos;
-    }
-
-    public void setxPos(int xPos) {
-
-        this.xPos = xPos;
-    }
-
-    public int getYPos() {
-        return yPos;
-    }
-
-    public void setYPos(int yPos) {
-
-        this.yPos = yPos;
+    public Rectangle(int width, int height, int xPos, int yPos, Color color) {
+        super(xPos, yPos, color);
+        this.width = width;
+        this.height = height;
     }
 
     public void draw(Graphics2D g) {
@@ -60,5 +17,13 @@ public class Rectangle implements Drawable {
         g.fillRect(xPos, yPos, width, height);
     }
 
+    public int getArea() {
+        int area = width*height;
+        return area;
+    }
 
+    public int getOmk() {
+        int omk = 2*(width+height);
+        return omk;
+    }
 }

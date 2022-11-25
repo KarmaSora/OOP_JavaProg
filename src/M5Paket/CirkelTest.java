@@ -14,10 +14,10 @@ public class CirkelTest {
         Circle[] circleArray = new Circle[4];
 
 
-        circleArray[0] = new Circle(200, 200, 200, 200, Color.red);
-        circleArray[1] = new Circle(300, 300, 0, 0, Color.blue);
-        circleArray[2] = new Circle(300, 300, 200, 400, Color.green);
-        circleArray[3] = new Circle(300, 300, 400, 400, Color.white);
+        circleArray[0] = new Circle(200, 200, 200, Color.red);
+        circleArray[1] = new Circle(300, 300, 200, Color.blue);
+        circleArray[2] = new Circle(300, 300, 200, Color.green);
+        circleArray[3] = new Circle(300, 300, 400,  Color.white);
 
 
         Rectangle rect = new Rectangle(100, 456, 300, 600, Color.cyan);

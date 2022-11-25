@@ -25,17 +25,21 @@ public class ShapeTest extends Shape{
         System.out.println("AREAN = " + area);
         gs.render(square);
 
-        Rectangle rectangle = new Rectangle(320, 321, 415, 125, Color.red);
+        Shape[] shapeArrays = new Shape[5];
+
+       shapeArrays[0] =  new Rectangle(320, 221, 415, 125, Color.red);
+       shapeArrays[1]= square;
+       shapeArrays[2] = new Circle(200,200,300,Color.blue);
+       shapeArrays[3]= new Square(100,600,300,Color.yellow);
+        gs.render(shapeArrays);
+
+     /**   Rectangle rectangle = new Rectangle(320, 221, 415, 125, Color.red);
         gs.render(rectangle);
         Circle Circ = new Circle(400, 230,320,140, Color.blue);
-        gs.render(Circ);
-
-
-
-
-
+        gs.render(Circ);*/
 
     }
+
 
     @Override
     public void draw(Graphics2D g) {

@@ -26,11 +26,15 @@ public class RectangleTest {
 
 
         gs.render(rect);
-        System.out.println("change Xand Y positions, start with X and then click enter  before inserting Y");
+        /*
+        * System.out.println("change Xand Y positions, start with X and then click enter  before inserting Y");
         System.out.println("current X and Y positoons: X = " + rect.getxPos() + " Y pos = " + rect.getYPos());
         rect.setxPos(input.nextInt());
         rect.setYPos(input.nextInt());
         System.out.println("Update: X = " + rect.getxPos() + " Y pos = " + rect.getYPos());
+        *
+        * */
+
         try {
             Thread.sleep(2000);
         } catch (Exception e) {
