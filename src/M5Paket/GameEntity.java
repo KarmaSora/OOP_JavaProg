@@ -11,7 +11,7 @@ import se.egy.graphics.GameScreen;
 import javax.swing.*;
 
 // new version of Entity.java, old version deleted!
-public class GameEntity implements KeyListener{
+public class GameEntity extends Entity implements KeyListener{
 
     private HashMap <String, Boolean> keyDown = new HashMap<>();
 
@@ -23,6 +23,7 @@ public class GameEntity implements KeyListener{
     private GameScreen gameScreen = new GameScreen("Game", 640, 480, false); // false vid testkörning
 
     public GameEntity(){
+        super(Image img, int x, int y,  int speed);
 
         gameScreen.setKeyListener(this);
 
@@ -41,8 +42,12 @@ public class GameEntity implements KeyListener{
         // Laddar in bild som ligger i katalogen resources
         Image img = new ImageIcon(getClass().getResource("/playerImg.png")).getImage();
 
-        player = new Entity(img, 384, 284) {
+        player = new Entity(img, 384, 284, 3) {
 
+            @Override
+            public void move() {
+
+            }
         };
         gameScreen.setBackground("/space-background.jpg");
 
@@ -56,7 +61,6 @@ public class GameEntity implements KeyListener{
             if (keyDown.get("right")) {
                 player.setX(player.getX() + 5);
             }}
-
         if(player.getX() > 0 ){
             if (keyDown.get("left")) {
                 player.setX(player.getX() - 5);
@@ -139,6 +143,8 @@ public class GameEntity implements KeyListener{
     }
 
 
+    @Override
+    public void move() {
 
-
+    }
 }

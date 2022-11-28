@@ -10,10 +10,11 @@ public abstract class Entity implements Drawable {
     private int speed, dx = 0, dy = 0;
    private boolean active = true;
 
-    public Entity(Image img, int x, int y,  int speed) {
+    public Entity(Image img, double x, double y, int speed) {
         // Egen kod
         this.x = x;
         this.y = y;
+        this.speed = speed;
         this.img = img;
     }
 
