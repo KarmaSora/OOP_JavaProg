@@ -11,8 +11,6 @@ public class Square extends Rectangle {
         super(w, w, x, y, c); // Anropar Rectangle's konstruktor        //  ska man ha detta?
 
 
-        yPos = y;
-        color = c;
     }
 
     /**

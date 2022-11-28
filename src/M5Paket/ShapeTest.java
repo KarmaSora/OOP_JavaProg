@@ -30,7 +30,7 @@ public class ShapeTest extends Shape{
        shapeArrays[0] =  new Rectangle(320, 221, 415, 125, Color.red);
        shapeArrays[1]= square;
        shapeArrays[2] = new Circle(200,200,300,Color.blue);
-       shapeArrays[3]= new Square(100,600,300,Color.yellow);
+       shapeArrays[3]= new Ellipse(300,200, 300,200,Color.yellow);
         gs.render(shapeArrays);
 
      /**   Rectangle rectangle = new Rectangle(320, 221, 415, 125, Color.red);

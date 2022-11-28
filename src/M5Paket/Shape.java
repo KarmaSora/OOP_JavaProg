@@ -5,8 +5,17 @@ import se.egy.graphics.Drawable;
 import java.awt.*;
 
 public abstract class Shape implements Drawable {
-    protected int xPos, yPos;
-    protected Color color;
+    private int xPos, yPos;
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    private Color color;
 
     /**
      * Konstruktor, kan inte användas för att skapa ett Shapeobjekt.
@@ -18,12 +27,7 @@ public abstract class Shape implements Drawable {
         this.color = color;
     }
 
-    public void setxPos(int xPos){
-        this.xPos=xPos;
-    }
-    public void setyPos(int xPos){
-        this.xPos=xPos;
-    }
+
 
     public int getxPos(){
         return xPos;
