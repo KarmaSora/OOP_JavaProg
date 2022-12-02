@@ -5,28 +5,22 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 
-import M5Paket.Entity;
 import se.egy.graphics.GameScreen;
 
 import javax.swing.*;
 
 // new version of Entity.java, old version deleted!
-public class GameEntity extends Entity implements KeyListener{
-
+public class GameEntity  implements KeyListener{
     private HashMap <String, Boolean> keyDown = new HashMap<>();
-
     private Entity player;
-
     private  boolean gameRunning = true;
-
-
     private GameScreen gameScreen = new GameScreen("Game", 640, 480, false); // false vid testkörning
 
     public GameEntity(){
-        super(Image img, int x, int y,  int speed);
+
+
 
         gameScreen.setKeyListener(this);
-
         keyDown.put("left", false);
         keyDown.put("right", false);
         keyDown.put("up",false);
@@ -37,10 +31,13 @@ public class GameEntity extends Entity implements KeyListener{
         gameLoop();
     }
 
+
+
     public void loadImages(){
 
         // Laddar in bild som ligger i katalogen resources
-        Image img = new ImageIcon(getClass().getResource("/playerImg.png")).getImage();
+       // Image img = new ImageIcon(getClass().getResource("/playerImg.png")).getImage();
+        Image img = new ImageIcon(getClass().getResource("../ship.png")).getImage();
 
         player = new Entity(img, 384, 284, 3) {
 
@@ -49,10 +46,7 @@ public class GameEntity extends Entity implements KeyListener{
 
             }
         };
-        gameScreen.setBackground("/space-background.jpg");
-
-
-
+      //  gameScreen.setBackground("/space-background.jpg");
 
     }
     public void update(){
@@ -81,29 +75,22 @@ public class GameEntity extends Entity implements KeyListener{
             }catch (Exception e){
 
             }
-
         }
-
-
-
     }
     public void render(){
         gameScreen.render(player);
-
     }
     public void gameLoop(){
         while(gameRunning){
             update();
             render();
             // Fördröjning
-
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {}
         }
 
     }
-
     /** Spelets tangentbordslyssnare */
     public void keyTyped(KeyEvent e) {
     }
@@ -120,13 +107,10 @@ public class GameEntity extends Entity implements KeyListener{
             keyDown.put("down", true);
         else if (key == KeyEvent.VK_ESCAPE)
             keyDown.put("esc", true);
-
-
     }
 
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
-
         if(key == KeyEvent.VK_LEFT)
             keyDown.put("left", false);
         else if(key == KeyEvent.VK_RIGHT)
@@ -143,8 +127,5 @@ public class GameEntity extends Entity implements KeyListener{
     }
 
 
-    @Override
-    public void move() {
 
-    }
 }
