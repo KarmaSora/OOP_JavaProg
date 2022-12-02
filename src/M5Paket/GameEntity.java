@@ -18,8 +18,6 @@ public class GameEntity  implements KeyListener{
 
     public GameEntity(){
 
-
-
         gameScreen.setKeyListener(this);
         keyDown.put("left", false);
         keyDown.put("right", false);
@@ -31,22 +29,20 @@ public class GameEntity  implements KeyListener{
         gameLoop();
     }
 
-
-
     public void loadImages(){
 
         // Laddar in bild som ligger i katalogen resources
        // Image img = new ImageIcon(getClass().getResource("/playerImg.png")).getImage();
         Image img = new ImageIcon(getClass().getResource("../ship.png")).getImage();
 
-        player = new Entity(img, 384, 284, 3) {
+        player = new shipEntity(img, 384, 284, 3) {
 
             @Override
             public void move() {
 
             }
         };
-      //  gameScreen.setBackground("/space-background.jpg");
+        gameScreen.setBackground("/space-background.jpg");
 
     }
     public void update(){

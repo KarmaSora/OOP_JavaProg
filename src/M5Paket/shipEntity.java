@@ -4,10 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class shipEntity extends Entity{
+    private Image player = new ImageIcon(getClass().getResource("/playerImg.png")).getImage();
+
     public shipEntity (Image image, double x, double y, int speed){
         super(image, x, y, speed);
     }
-   private Image player = new ImageIcon(getClass().getResource("/playerImg.png")).getImage();
 
 
     public void move() {
