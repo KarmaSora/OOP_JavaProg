@@ -13,6 +13,7 @@ public class shipEntity extends Entity{
 
     public void move() {
        setX(getX() + getDirectionX()*getSpeed());
+       setY(getY() + getDirectionY()*getSpeed());
     }
 
 
